@@ -32,6 +32,18 @@ function perguntaPraCris(){
         typeWriter();
         break;
 
+        case input.includes("conta digital"):
+          limpaResposta();
+          resposta = "para saber mais sobre conta digital...";
+          typeWriter();
+          break;
+
+          case input.includes("digo de cancelamento"):
+            limpaResposta();
+            codigoCancelamento();
+            typeWriter();
+            break;
+
         case input.includes("data de hoje"):
           limpaResposta();
           resposta = "A data de hoje é: " + dataAtual;
