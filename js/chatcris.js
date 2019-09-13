@@ -106,6 +106,7 @@ function perguntaPraCris(){
       document.getElementById("demo").innerHTML = "";
     }
     function respostaDefault(){
+      limpaResposta();
       resposta = "Desculpe, não entendi, pode perguntar de outra forma, por favor?";
       typeWriter();
     }
