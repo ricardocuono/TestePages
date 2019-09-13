@@ -57,7 +57,7 @@ function perguntaPraCris(){
 
 
       default:
-      respostaDefault()
+      respostaDefault();
     }
 
 // document.getElementById("demo").innerHTML = resposta;
