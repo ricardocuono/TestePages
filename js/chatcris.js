@@ -55,6 +55,11 @@ function perguntaPraCris(){
         tudoBem();
         break;
 
+      case "kill":
+        limpaResposta();
+        killApp();
+        break;
+
 
       default:
       respostaDefault();
@@ -125,5 +130,16 @@ function perguntaPraCris(){
     //     setTimeout(typeWriter, speed);
     //   }
     // }
+
+    function killApp(){
+      alert("Saindo da aplicação em 3...2...1...");
+      window.open('','_self').close();
+    }
+
+// limpa campo de texto (a.k.a input)
+        $('button').click(function(){
+        $('input[type="text"]').val("");
+      });
+
 
 }
