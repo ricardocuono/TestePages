@@ -50,6 +50,14 @@ function perguntaPraCris(){
           typeWriter();
           break;
 
+        case input.includes("suporte"):
+          limpaResposta();
+          resposta =
+            "Para falar com alguém da nossa equipe de suporte: " +
+            "Ligue para (11) 3863-2332 ou pelo Whatsapp: +55 11 95305-3981";
+          typeWriter();
+          break;
+
         case input.includes("horas"):
           limpaResposta();
           resposta = "Hora atual: " + horaEMinutosAtual;
