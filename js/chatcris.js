@@ -16,6 +16,7 @@ function perguntaPraCris(){
         limpaResposta();
         resposta = "Olá, como você está?";
         typeWriter();
+        limpaInput();
         break;
 
       // codigo de cancelamento
@@ -138,9 +139,13 @@ function perguntaPraCris(){
     }
 
 // limpa campo de texto (a.k.a input)
-        $('button').click(function(){
-        $('input[type="text"]').val("");
+  function limpaInput(){
+      $('button').click(function(){
+      $('input[type="text"]').val("");
       });
+  }
+
+
 
 
 }
