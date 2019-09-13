@@ -12,13 +12,22 @@ function perguntaPraCris(){
         typeWriter();
         break;
 
+// maneiras de falar oi
       case "oi":
         limpaResposta();
         resposta = "Olá, como você está?";
         typeWriter();
         break;
 
-      // codigo de cancelamento
+      case "salve":
+        limpaResposta();
+        resposta = "Olá, como você está?";
+        typeWriter();
+        break;
+
+
+
+// codigo de cancelamento
       case "Onde que verifico o código de cancelamento em minha maquininha?":
         limpaResposta();
         codigoCancelamento();
