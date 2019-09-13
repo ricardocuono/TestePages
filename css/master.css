@@ -24,9 +24,13 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .secao-cris{
-
   color: rgb(28,157,169);
   /* color: #49d1d6; */
   padding: 10px;
+  /* padding-bottom: 150px; */
   text-align: center;
+  /* border: 5px solid red; */
+}
+main{
+  padding-bottom: 10px;
 }

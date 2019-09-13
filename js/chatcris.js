@@ -1,30 +1,64 @@
 function perguntaPraCris(){
     var userName = "Ricardo";
+    var dataHoje = new Date();
+    var dia = dataHoje.getDate();
+    var mes = dataHoje.getMonth();
+    var ano = dataHoje.getFullYear();
+    var dataAtual = dia + "/" + mes + "/" + ano;
+    var soHoraAgora = dataHoje.getHours();
+    var soMinutosAgora = dataHoje.getMinutes();
+    var horaEMinutosAtual = dataHoje.getHours() + ":" + dataHoje.getMinutes();
 
     var input = document.getElementById("input").value;
-
     var resposta;
-
     var i = 0;
-
     var speed = 30;
 
-    if (input == "oi") {
-      limpaResposta();
-      respostaFormasDeDizerOi();
-      typeWriter();
+//maneiras de dizer oi
+    var x;
+    var x = input;
+
+//maneiras de dizer oi
+    switch (true) {
+      case input.includes("oi"):
+        limpaResposta();
+        resposta = "Olá " + userName + ", como posso te ajudar?";
+        typeWriter();
+        break;
+
+      case input==="":
+        limpaResposta();
+        resposta = "por favor, digite algo";
+        typeWriter();
+        break;
+
+        case input.includes("data de hoje"):
+          limpaResposta();
+          resposta = "A data de hoje é: " + dataAtual;
+          typeWriter();
+          break;
+
+        case input.includes("horas"):
+          limpaResposta();
+          resposta = "Hora atual: " + horaEMinutosAtual;
+          typeWriter();
+          break;
+
+      default:
+        limpaResposta();
+        resposta = "Desculpa, não entendi";
+        typeWriter();
     }
 
 
-
-      if (input == "") {
-        limpaResposta();
-        resposta = "Digite algo para falar comigo!";
-        typeWriter();
-      }
-      else {
-
-      }
+      // if (input == "") {
+      //   limpaResposta();
+      //   resposta = "Digite algo para falar comigo!";
+      //   typeWriter();
+      // }
+      // else {
+      //
+      // }
 
     function codigoCancelamento(){
       resposta = "O código de cancelamento aparece como código EC em todos os comprovantes " +
