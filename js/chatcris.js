@@ -5,6 +5,19 @@ function perguntaPraCris(){
     var i = 0;
     var speed = 45;
 
+    var testaIncludes =
+      function testaIncludes(var s){
+        s = "oi tudo bom?";
+
+        if (s.includes("oi")) {
+          console.log("deu certo!");
+        }
+      };
+
+      console.log(testaIncludes);
+
+      }
+
     switch (input) {
       case "":
         limpaResposta();
@@ -24,8 +37,6 @@ function perguntaPraCris(){
         resposta = "Olá, como você está?";
         typeWriter();
         break;
-
-
 
 // codigo de cancelamento
       case "Onde que verifico o código de cancelamento em minha maquininha?":
