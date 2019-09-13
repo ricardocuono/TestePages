@@ -1,135 +1,30 @@
 function perguntaPraCris(){
-    var input = document.getElementById("input").value;
+    var userName = "Ricardo";
 
-    var check = input.includes("ajuda");
+    var input = document.getElementById("input").value;
 
     var resposta;
 
     var i = 0;
 
-    var speed = 45;
+    var speed = 30;
 
-    var inputNome = document.getElementById("inputNome").value;
+    if (input == "oi") {
+      limpaResposta();
+      respostaFormasDeDizerOi();
+      typeWriter();
+    }
 
-    var testaIncludes = testaIncludes(input);
 
-      function testaIncludes(input){
-        this.input = input;
-        if (input.includes("conta digital")) {
-          var resposta = "para saber mais sobre conta digital...";
-          document.getElementById("demo").innerHTML = resposta;
-        }
-        else if (input.includes("oi")) {
-          limpaResposta();
-          chamaPeloNome(nome);
-          typeWriter();
 
-        }
-        else {
-          var str = "deu ruim!";
-          console.log(str.toUpperCase());
-        }
-
+      if (input == "") {
+        limpaResposta();
+        resposta = "Digite algo para falar comigo!";
+        typeWriter();
+      }
+      else {
 
       }
-
-      console.log(testaIncludes);
-
-
-
-//     switch (testaIncludes) {
-//       case "":
-//         limpaResposta();
-//         resposta = "Por favor, digite algo."
-//         typeWriter();
-//         break;
-//
-// // maneiras de falar oi
-//       case "oi":
-//         limpaResposta();
-//         resposta = "Olá, como você está?";
-//         typeWriter();
-//         break;
-//
-//       case "salve":
-//         limpaResposta();
-//         resposta = "Olá, como você está?";
-//         typeWriter();
-//         break;
-//
-// // codigo de cancelamento
-//       case "Onde que verifico o código de cancelamento em minha maquininha?":
-//         limpaResposta();
-//         codigoCancelamento();
-//         break;
-//
-//       case "código de cancelamento":
-//         limpaResposta();
-//         codigoCancelamento();
-//         break;
-//
-//       case "codigo de cancelamento":
-//           limpaResposta();
-//           codigoCancelamento();
-//           break;
-//       // codigo de cancelamento
-//
-//       case "tudo bem":
-//         limpaResposta();
-//         tudoBem();
-//         break;
-//
-//       case "tudo bem?":
-//         limpaResposta();
-//         tudoBem();
-//         break;
-//
-//       case "tudo bom":
-//         limpaResposta();
-//         tudoBem();
-//         break;
-//
-//       case "tudo bom?":
-//         limpaResposta();
-//         tudoBem();
-//         break;
-//
-//       case "kill":
-//         limpaResposta();
-//         killApp();
-//         break;
-//
-//
-//       default:
-//       respostaDefault();
-//     }
-
-// document.getElementById("demo").innerHTML = resposta;
-
-    // if (input == "kill") {
-    //   alert("saindo da aplicação em 3...2...1...");
-    //   window.close();
-    // }
-    //
-    // if (input == "/help") {
-    //   var resposta = document.getElementById("demo").innerHTML =
-    //     "Esses são os comandos da aplicação:";
-    // }
-    //
-    // if (input == "oi"
-    //     ||
-    //     input == "olá") {
-    //   var resposta = document.getElementById("demo").innerHTML = "Olá!";
-    // }
-    // else if (input.includes("tudo bem")) {
-    //   var resposta = document.getElementById("demo").innerHTML = "tudo ótimo e você?";
-    // }
-    //
-    //
-    //
-    // else {
-    //   var resposta = document.getElementById("demo").innerHTML = "não entendi, pode perguntar de outra forma, por favor?";
-    // }
 
     function codigoCancelamento(){
       resposta = "O código de cancelamento aparece como código EC em todos os comprovantes " +
@@ -143,8 +38,6 @@ function perguntaPraCris(){
         document.getElementById("demo").innerHTML += resposta.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
-
-
       }
     }
     function limpaResposta(){
@@ -155,32 +48,24 @@ function perguntaPraCris(){
       resposta = "Desculpe, não entendi, pode perguntar de outra forma, por favor?";
       typeWriter();
     }
+
     function tudoBem(){
-      resposta = "tudo bem e você?";
+      limpaResposta();
+      resposta = "Tudo ótimo por aqui! Como posso ser útil?"
       typeWriter();
     }
-    // var i = 0;
-    // var txt = 'Lorem ipsum dummy text blabla.';
-    // var speed = 50;
-    //
-    // function typeWriter() {
-    //   if (i < txt.length) {
-    //     document.getElementById("demo").innerHTML += txt.charAt(i);
-    //     i++;
-    //     setTimeout(typeWriter, speed);
-    //   }
-    // }
+
+
+
+    function respostaFormasDeDizerOi(){
+        resposta = "Olá, " + userName + ", como você está?";
+        typeWriter();
+    }
 
     function killApp(){
       alert("Saindo da aplicação em 3...2...1...");
       window.open('','_self').close();
     }
-
-    function chamaPeloNome(){
-      alert("nome enviado ❤");
-      var resposta = "Olá, " + inputNome + " como posso te ajudar?";
-    }
-
 
 // limpa campo de texto (a.k.a input)
     $('button').click(function(){
