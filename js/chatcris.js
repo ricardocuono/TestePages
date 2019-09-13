@@ -94,7 +94,8 @@ function perguntaPraCris(){
 
     function codigoCancelamento(){
       resposta = "O código de cancelamento aparece como código EC em todos os comprovantes " +
-      "de venda ou entrar em contato com a central Tecpay.";
+      "de venda. Caso não consiga encontrar, entre em contato com a central Tecpay no telefone " +
+      "(11)3862-2332.";
       typeWriter();
 
     }
