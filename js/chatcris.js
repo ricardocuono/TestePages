@@ -1,89 +1,108 @@
 function perguntaPraCris(){
     var input = document.getElementById("input").value;
+
     var check = input.includes("ajuda");
+
     var resposta;
+
     var i = 0;
+
     var speed = 45;
 
-    var testaIncludes =
-      function testaIncludes(var s){
-        s = "oi tudo bom?";
+    var inputNome = document.getElementById("inputNome").value;
 
-        if (s.includes("oi")) {
-          console.log("deu certo!");
+    var testaIncludes = testaIncludes(input);
+
+      function testaIncludes(input){
+        this.input = input;
+        if (input.includes("conta digital")) {
+          var resposta = "para saber mais sobre conta digital...";
+          document.getElementById("demo").innerHTML = resposta;
         }
-      };
+        else if (input.includes("oi")) {
+          limpaResposta();
+          chamaPeloNome(nome);
+          typeWriter();
 
-      console.log(testaIncludes);
+        }
+        else {
+          var str = "deu ruim!";
+          console.log(str.toUpperCase());
+        }
+
 
       }
 
-    switch (input) {
-      case "":
-        limpaResposta();
-        resposta = "Por favor, digite algo."
-        typeWriter();
-        break;
-
-// maneiras de falar oi
-      case "oi":
-        limpaResposta();
-        resposta = "Olá, como você está?";
-        typeWriter();
-        break;
-
-      case "salve":
-        limpaResposta();
-        resposta = "Olá, como você está?";
-        typeWriter();
-        break;
-
-// codigo de cancelamento
-      case "Onde que verifico o código de cancelamento em minha maquininha?":
-        limpaResposta();
-        codigoCancelamento();
-        break;
-
-      case "código de cancelamento":
-        limpaResposta();
-        codigoCancelamento();
-        break;
-
-      case "codigo de cancelamento":
-          limpaResposta();
-          codigoCancelamento();
-          break;
-      // codigo de cancelamento
-
-      case "tudo bem":
-        limpaResposta();
-        tudoBem();
-        break;
-
-      case "tudo bem?":
-        limpaResposta();
-        tudoBem();
-        break;
-
-      case "tudo bom":
-        limpaResposta();
-        tudoBem();
-        break;
-
-      case "tudo bom?":
-        limpaResposta();
-        tudoBem();
-        break;
-
-      case "kill":
-        limpaResposta();
-        killApp();
-        break;
+      console.log(testaIncludes);
 
 
-      default:
-      respostaDefault();
-    }
+
+//     switch (testaIncludes) {
+//       case "":
+//         limpaResposta();
+//         resposta = "Por favor, digite algo."
+//         typeWriter();
+//         break;
+//
+// // maneiras de falar oi
+//       case "oi":
+//         limpaResposta();
+//         resposta = "Olá, como você está?";
+//         typeWriter();
+//         break;
+//
+//       case "salve":
+//         limpaResposta();
+//         resposta = "Olá, como você está?";
+//         typeWriter();
+//         break;
+//
+// // codigo de cancelamento
+//       case "Onde que verifico o código de cancelamento em minha maquininha?":
+//         limpaResposta();
+//         codigoCancelamento();
+//         break;
+//
+//       case "código de cancelamento":
+//         limpaResposta();
+//         codigoCancelamento();
+//         break;
+//
+//       case "codigo de cancelamento":
+//           limpaResposta();
+//           codigoCancelamento();
+//           break;
+//       // codigo de cancelamento
+//
+//       case "tudo bem":
+//         limpaResposta();
+//         tudoBem();
+//         break;
+//
+//       case "tudo bem?":
+//         limpaResposta();
+//         tudoBem();
+//         break;
+//
+//       case "tudo bom":
+//         limpaResposta();
+//         tudoBem();
+//         break;
+//
+//       case "tudo bom?":
+//         limpaResposta();
+//         tudoBem();
+//         break;
+//
+//       case "kill":
+//         limpaResposta();
+//         killApp();
+//         break;
+//
+//
+//       default:
+//       respostaDefault();
+//     }
 
 // document.getElementById("demo").innerHTML = resposta;
 
@@ -156,6 +175,12 @@ function perguntaPraCris(){
       alert("Saindo da aplicação em 3...2...1...");
       window.open('','_self').close();
     }
+
+    function chamaPeloNome(){
+      alert("nome enviado ❤");
+      var resposta = "Olá, " + inputNome + " como posso te ajudar?";
+    }
+
 
 // limpa campo de texto (a.k.a input)
     $('button').click(function(){
