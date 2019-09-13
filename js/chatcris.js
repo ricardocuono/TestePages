@@ -3,7 +3,7 @@ function perguntaPraCris(){
     var check = input.includes("ajuda");
     var resposta;
     var i = 0;
-    var speed = 45;
+    var speed = 10;
 
     switch (input) {
       case "":
