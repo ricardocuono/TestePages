@@ -13,11 +13,11 @@
     <title>teste bot.js</title>
   </head>
   <body>
-    <div class="container">
+    <div id="container" class="container">
       <a href="../index.html"><img src="..\img\tecpay.png" alt="logo_tecpay.png"></a>
       <main>
         <h1>Converse com a Cris</h1>
-        <h3>A Cris é a nossa assistente digital 24/7, equipada com tecnologia de ponta!</h3>
+        <h3>A Cris é a nossa assistente digital 24/7 e está pronta para o que você precisar!</h3>
       </main>
 
         <div class="iniciaChat">
@@ -31,8 +31,7 @@
 
             <section class="secao-chat">
               <input id="input" type="text" name="input_usuario" placeholder="Digite sua resposta">
-              <button class="btn btn-info" type="button" name="button" onclick="perguntaPraCris()">Perguntar</button>
-
+              <button id="perguntaCris" class="btn btn-info" type="button" name="button" onclick="perguntaPraCris()">Perguntar</button>
               <p id="demo"></p>
             </section>
 
