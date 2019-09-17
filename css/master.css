@@ -32,10 +32,21 @@ h1, h2, h3, h4, h5, h6, p{
   /* border: 5px solid red; */
 }
 
-  .secao-chat input{
+  .secao-chat textarea{
     /* text-transform: lowercase; */
+    padding: 10px;
+  }
+
+  .secao-chat label{
+    font-size: 20px;
   }
 
 main{
   padding-bottom: 10px;
+}
+
+.botoes-taxa-ao-portador{
+  padding: 10px;
+  margin-right: 5px;
+  text-align: center;
 }

@@ -30,7 +30,13 @@
             <h4>Olá! Como posso te ajudar?</h4>
 
             <section class="secao-chat">
-              <input id="input" type="text" name="input_usuario" placeholder="Digite sua resposta">
+              <form>
+                <div class="form-group">
+                  <label for="comment">Pergunte qualquer coisa</label>
+                  <textarea id="input" type="text" class="form-control"  placeholder="Digite sua resposta" value=""></textarea>
+                </div>
+              </form>
+
               <button id="perguntaCris" class="btn btn-info" type="button" name="button" onclick="perguntaPraCris()">Perguntar</button>
               <p id="demo"></p>
             </section>
