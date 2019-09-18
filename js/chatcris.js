@@ -1,5 +1,5 @@
 function perguntaPraCris(){
-    var userName = "Ricardo";
+
     var dataHoje = new Date();
     var dia = dataHoje.getDate();
     var mes = dataHoje.getMonth();
@@ -15,10 +15,7 @@ function perguntaPraCris(){
     var resposta;
     var i = 0;
     var speed = 30;
-
-//maneiras de dizer oi
-    var x;
-    var x = input;
+    var espacoEntreOsBotoes = document.createTextNode(" ");
 
 //maneiras de dizer oi
     switch (true) {
@@ -143,35 +140,75 @@ function perguntaPraCris(){
         break;
 
       case inputMinusculo.includes("vend"):
-        comoFacoUmaVendaComAMaquinaTecpay();
+        mostraBotoesDasOpcoesParaVendas();
         break;
 
     default:
       respostaDefault();
   }
 
+
+
     function comoFacoUmaVendaComAMaquinaTecpay(){
+        limpaResposta();
+        // resposta = "Escolha a opção desejada";
+        // typeWriter();
+
+        let btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.getElementById("demo");
+        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.createElement("button");
+        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.setAttribute("id","btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito");
+        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.setAttribute("class", "botoes-como-faco-uma-venda-maquina-tecpay-opcao-debito btn btn-info");
+        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.innerHTML = "Débito";
+
+        document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito);
+    }
+
+    function mostraBotoesDasOpcoesParaVendas(){
       limpaResposta();
-      let respostaTemp = "INCLUIR BOTÕES AQUI"
-      resposta = respostaTemp;
-      typeWriter();
+      // botao como faco uma venda com a maquininha tecpay
+      let btnComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo");
+      btnComoFacoUmaVendaComAMaquinaTecpay = document.createElement("button");
+      btnComoFacoUmaVendaComAMaquinaTecpay.setAttribute("id","btnComoFacoUmaVendaComAMaquinaTecpay");
+      btnComoFacoUmaVendaComAMaquinaTecpay.setAttribute("class", "botoes-como-faco-uma-venda-maquina-tecpay btn btn-info");
+      btnComoFacoUmaVendaComAMaquinaTecpay.innerHTML = "Como faço uma venda com a Máquina Tecpay";
+
+      // botao como posso acompanhar/visualizar uma venda
+      let btnAcompanharVisualizarVendasMaquinaTecpay = document.getElementById("demo");
+      btnAcompanharVisualizarVendas = document.createElement("button");
+      btnAcompanharVisualizarVendas.setAttribute("id","btnAcompanharVisualizarVendas");
+      btnAcompanharVisualizarVendas.setAttribute("class", "botoes-como-acompanho-minhas-vendas-maquina-tecpay btn btn-info");
+      btnAcompanharVisualizarVendas.innerHTML = "Como posso acompanhar minhas vendas na maquininha Tecpay";
+
+      // adicionar o botao criado ao corpo do documento.
+      document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpay);
+
+      // adicionar um espaço entre os botões
+      document.getElementById("demo").appendChild(espacoEntreOsBotoes);
+
+      // adicionar o botao criado ao corpo do documento.
+      document.getElementById("demo").appendChild(btnAcompanharVisualizarVendas);
+
+      btnComoFacoUmaVendaComAMaquinaTecpay.onclick = comoFacoUmaVendaComAMaquinaTecpay;
+
+      // atribuir a funcao de acompanhar as vendas ao botao btnAcompanharVisualizarVendas
+      btnAcompanharVisualizarVendas.onclick = acompanharVendas;
     }
 
     function criaBotoesTaxaAoPortador(){
-      var btnComoFuncionamAsTaxasAoPortador = document.getElementById("demo");
+      let btnComoFuncionamAsTaxasAoPortador = document.getElementById("demo");
       btnComoFuncionamAsTaxasAoPortador = document.createElement("BUTTON");
       btnComoFuncionamAsTaxasAoPortador.setAttribute("id","btnComoFuncionamAsTaxasAoPortador");
       btnComoFuncionamAsTaxasAoPortador.setAttribute("class", "botoes-taxa-ao-portador btn btn-info");
       btnComoFuncionamAsTaxasAoPortador.innerHTML = "Como funcionam as taxas ao portador";
 
-      var btnIncluirTaxasAoPortador = document.getElementById("demo");
+      let btnIncluirTaxasAoPortador = document.getElementById("demo");
       btnIncluirTaxasAoPortador = document.createElement("BUTTON");
       btnIncluirTaxasAoPortador.setAttribute("id","btnIncluirTaxasAoPortador");
       btnIncluirTaxasAoPortador.setAttribute("class", "btn btn-info");
       btnIncluirTaxasAoPortador.innerHTML = "Como faço para incluir taxas ao portador na minha maquininha?";
 
       // document.body.appendChild(btnIncluirTaxasAoPortador);
-      var espacoEntreOsBotoes = document.createTextNode(" ");
+
       document.getElementById("demo").appendChild(btnIncluirTaxasAoPortador);
       document.getElementById("demo").appendChild(espacoEntreOsBotoes);
       document.getElementById("demo").appendChild(btnComoFuncionamAsTaxasAoPortador);
@@ -191,7 +228,7 @@ function perguntaPraCris(){
 
     function comoFuncionamAsTaxasAoPortador(){
       limpaResposta();
-      resposta = "Ao escolher essa opção, todas as taxas atribuídas ao "
+      resposta = "Como funcionam as taxas ao portador: todas as taxas atribuídas ao "
       + "lojista serão transferidas ao consumidor final. Desta forma, o "
       + "valor integral da venda será repassado ao lojista em sua próxima antecipação de valores. ";
       typeWriter();
@@ -244,7 +281,8 @@ function perguntaPraCris(){
 
     function oi(){
       limpaResposta();
-      resposta = "Olá " + userName + ", como posso te ajudar?";
+      // resposta = "Olá " + userName + ", como posso te ajudar?";
+      resposta = "Olá, como posso te ajudar?";
       typeWriter();
     }
 
