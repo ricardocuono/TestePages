@@ -151,7 +151,6 @@ function perguntaPraCris(){
 
     function mostraBotoesDasOpcoesParaVendas(){
       limpaResposta();
-
       // botao como faco uma venda com a maquininha tecpay
       let btnComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo");
       btnComoFacoUmaVendaComAMaquinaTecpay = document.createElement("button");
@@ -185,6 +184,9 @@ function perguntaPraCris(){
       document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpay);
       function comoFacoUmaVendaComAMaquinaTecpay(){
           limpaResposta();
+          let textoInformativoComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo2");
+          textoInformativoComoFacoUmaVendaComAMaquinaTecpay.innerHTML = "Selecione a opção desejada";
+
           let btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.getElementById("demo");
           btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.createElement("button");
           btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.setAttribute("id","btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito");
@@ -203,17 +205,19 @@ function perguntaPraCris(){
 
           function comoFacoUmaVendaComAMaquinaTecpayOpcaoDebito(){
             limpaResposta();
-            resposta = "Oção Débito: "
-            +"Insira o cartão -> escolha a opção de débito"
-            + "-> coloque o valor desejado -> peça ao cliente que insira a senha"
+            let textoInformativoComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo2");
+            textoInformativoComoFacoUmaVendaComAMaquinaTecpay.innerHTML = "Opção Débito:";
+            resposta = "Insira o cartão -> escolha a opção de débito "
+            + "-> coloque o valor desejado -> peça ao cliente que insira a senha "
             + "-> aperte o verde -> aguarde a impressão do comprovante.";
             typeWriter();
           }
 
           function comoFacoUmaVendaComAMaquinaTecpayOpcaoCredito(){
             limpaResposta();
-            resposta = "Oção Crédito: "
-            + "Insira o cartão -> escolha a opção de crédito "
+            let textoInformativoComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo2");
+            textoInformativoComoFacoUmaVendaComAMaquinaTecpay.innerHTML = "Opção Crédito:";
+            resposta = "Insira o cartão -> escolha a opção de crédito "
             + "-> optar por a vista ou parcelado -> digite o valor "
             + "-> solicite a senha ao cliente -> aguarde a impressão do comprovante. ";
             typeWriter();
@@ -270,6 +274,7 @@ function perguntaPraCris(){
 
 
     function criaBotoesTaxaAoPortador(){
+      limpaResposta();
       let btnComoFuncionamAsTaxasAoPortador = document.getElementById("demo");
       btnComoFuncionamAsTaxasAoPortador = document.createElement("BUTTON");
       btnComoFuncionamAsTaxasAoPortador.setAttribute("id","btnComoFuncionamAsTaxasAoPortador");
@@ -338,8 +343,17 @@ function perguntaPraCris(){
       }
     }
 
+    function typeWriter2() {
+      if (i < resposta.length) {
+        document.getElementById("demo2").innerHTML += resposta.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
     function limpaResposta(){
       document.getElementById("demo").innerHTML = "";
+      document.getElementById("demo2").innerHTML = "";
     }
 
     function respostaDefault(){
@@ -363,8 +377,8 @@ function perguntaPraCris(){
 
     function wifi(){
       limpaResposta();
-      var resposta1 = "Para configurar a maquininha para o modo Wi-Fi:";
-      var resposta2 = "Menu -> Administrativo ->  Wifi -> Redes Wifi -> Selecionar Wifi desejado -> Conectar -> Inserir a senha -> Conferir se aparece o sinal do Wifi."
+      let resposta1 = "Para configurar a maquininha para o modo Wi-Fi:";
+      let resposta2 = "Menu -> Administrativo ->  Wifi -> Redes Wifi -> Selecionar Wifi desejado -> Conectar -> Inserir a senha -> Conferir se aparece o sinal do Wifi."
       resposta = resposta1 + resposta2;
       typeWriter();
     }

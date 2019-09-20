@@ -1,4 +1,7 @@
+
+
 document.getElementById("btnLoginSubmit").addEventListener("click", direcionaPraCris, false);
+
 
   function direcionaPraCris() {
     var inputLogin = document.getElementById("usr").value;
@@ -12,7 +15,7 @@ document.getElementById("btnLoginSubmit").addEventListener("click", direcionaPra
         window.location.href='html/conversaCris.html';
       }
       else {
-        alert("Não foi possível autorizar entrada!");
+
       }
     }
 
@@ -22,6 +25,8 @@ document.getElementById("btnLoginSubmit").addEventListener("click", direcionaPra
         break;
 
       default:
+      var mensagemErro = document.getElementById("msgErro");
+      mensagemErro.innerHTML = "ERRO!".fontcolor("red");
       alert("Não foi possível autorizar entrada!");
     }
 

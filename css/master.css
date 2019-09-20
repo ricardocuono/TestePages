@@ -6,13 +6,13 @@ body{
   margin: auto;
   width: 60%;
   border: 2px solid #49d1d6;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   color: rgb(5,102,118);
 }
 
-h1, h2, h3, h4, h5, h6, p{
-  padding: 10px;
+h1, h2, h3, h4, h5, h6{
+  padding: 2px;
   text-align:center;
 }
 
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6, p{
 .secao-cris{
   color: rgb(28,157,169);
   /* color: #49d1d6; */
-  padding: 10px;
+  padding: 5px;
   /* padding-bottom: 150px; */
   text-align: center;
   /* border: 5px solid red; */
@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6, p{
 
   .secao-chat textarea{
     /* text-transform: lowercase; */
-    padding: 10px;
+    padding: 5px;
   }
 
   .secao-chat label{
@@ -46,7 +46,7 @@ main{
 }
 
 .botoes-taxa-ao-portador{
-  padding: 10px;
+  padding: 5px;
   margin-right: 5px;
   text-align: center;
 }
