@@ -7,10 +7,23 @@ document.getElementById("btnLoginSubmit").addEventListener("click", direcionaPra
     var userName = "ricardo";
     var password = "ricardo";
 
-    if (inputLogin == userName && inputSenha == password) {
-      window.location.href='html/conversaCris.html';
+    function autenticacao(){
+      if (inputLogin == userName && inputSenha == password) {
+        window.location.href='html/conversaCris.html';
+      }
+      else {
+        alert("Não foi possível autorizar entrada!");
+      }
     }
-    else {
+
+    switch (true) {
+      case inputLogin==="ricardo":
+        autenticacao();
+        break;
+
+      default:
       alert("Não foi possível autorizar entrada!");
     }
+
+
   }

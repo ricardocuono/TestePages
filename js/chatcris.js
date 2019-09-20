@@ -14,7 +14,7 @@ function perguntaPraCris(){
     var inputMinusculo = input.toLowerCase();
     var resposta;
     var i = 0;
-    var speed = 30;
+    var speed = 15;
     var espacoEntreOsBotoes = document.createTextNode(" ");
 
 //maneiras de dizer oi
@@ -149,22 +149,9 @@ function perguntaPraCris(){
 
 
 
-    function comoFacoUmaVendaComAMaquinaTecpay(){
-        limpaResposta();
-        // resposta = "Escolha a opção desejada";
-        // typeWriter();
-
-        let btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.getElementById("demo");
-        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.createElement("button");
-        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.setAttribute("id","btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito");
-        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.setAttribute("class", "botoes-como-faco-uma-venda-maquina-tecpay-opcao-debito btn btn-info");
-        btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.innerHTML = "Débito";
-
-        document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito);
-    }
-
     function mostraBotoesDasOpcoesParaVendas(){
       limpaResposta();
+
       // botao como faco uma venda com a maquininha tecpay
       let btnComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo");
       btnComoFacoUmaVendaComAMaquinaTecpay = document.createElement("button");
@@ -179,20 +166,108 @@ function perguntaPraCris(){
       btnAcompanharVisualizarVendas.setAttribute("class", "botoes-como-acompanho-minhas-vendas-maquina-tecpay btn btn-info");
       btnAcompanharVisualizarVendas.innerHTML = "Como posso acompanhar minhas vendas na maquininha Tecpay";
 
+      //botao como cancelar uma venda
+      let btnCancelarUmaVendaComAMaquinaTecpay = document.getElementById("demo");
+      btnCancelarUmaVendaComAMaquinaTecpay = document.createElement("button");
+      btnCancelarUmaVendaComAMaquinaTecpay.setAttribute("id","btnCancelarUmaVendaComAMaquinaTecpay");
+      btnCancelarUmaVendaComAMaquinaTecpay.setAttribute("class", "botoes-cancelar-uma-venda-maquina-tecpay btn btn-info");
+      btnCancelarUmaVendaComAMaquinaTecpay.innerHTML = "Cancelar Venda";
+
+      //botao para antecipar as vendas
+      //botao como cancelar uma venda
+      let btnAnteciparVendas = document.getElementById("demo");
+      btnAnteciparVendas = document.createElement("button");
+      btnAnteciparVendas.setAttribute("id","btnAnteciparVendas");
+      btnAnteciparVendas.setAttribute("class", "botoes-antecipar-uma-venda btn btn-info");
+      btnAnteciparVendas.innerHTML = "Antecipar Venda";
+
       // adicionar o botao criado ao corpo do documento.
       document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpay);
+      function comoFacoUmaVendaComAMaquinaTecpay(){
+          limpaResposta();
+          let btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.getElementById("demo");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito = document.createElement("button");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.setAttribute("id","btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.setAttribute("class", "botoes-como-faco-uma-venda-maquina-tecpay-opcao-debito btn btn-info");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.innerHTML = "Débito";
 
+          let btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito = document.getElementById("demo");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito = document.createElement("button");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito.setAttribute("id","btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito.setAttribute("class", "botoes-como-faco-uma-venda-maquina-tecpay-opcao-credito btn btn-info");
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito.innerHTML = "Crédito";
+
+          document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito);
+          document.getElementById("demo").appendChild(espacoEntreOsBotoes);
+          document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito);
+
+          function comoFacoUmaVendaComAMaquinaTecpayOpcaoDebito(){
+            limpaResposta();
+            resposta = "Oção Débito: "
+            +"Insira o cartão -> escolha a opção de débito"
+            + "-> coloque o valor desejado -> peça ao cliente que insira a senha"
+            + "-> aperte o verde -> aguarde a impressão do comprovante.";
+            typeWriter();
+          }
+
+          function comoFacoUmaVendaComAMaquinaTecpayOpcaoCredito(){
+            limpaResposta();
+            resposta = "Oção Crédito: "
+            + "Insira o cartão -> escolha a opção de crédito "
+            + "-> optar por a vista ou parcelado -> digite o valor "
+            + "-> solicite a senha ao cliente -> aguarde a impressão do comprovante. ";
+            typeWriter();
+          }
+
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoDebito.onclick = comoFacoUmaVendaComAMaquinaTecpayOpcaoDebito;
+          btnComoFacoUmaVendaComAMaquinaTecpayOpcaoCredito.onclick = comoFacoUmaVendaComAMaquinaTecpayOpcaoCredito;
+      }
+      btnComoFacoUmaVendaComAMaquinaTecpay.onclick = comoFacoUmaVendaComAMaquinaTecpay;
       // adicionar um espaço entre os botões
       document.getElementById("demo").appendChild(espacoEntreOsBotoes);
 
       // adicionar o botao criado ao corpo do documento.
       document.getElementById("demo").appendChild(btnAcompanharVisualizarVendas);
-
-      btnComoFacoUmaVendaComAMaquinaTecpay.onclick = comoFacoUmaVendaComAMaquinaTecpay;
-
       // atribuir a funcao de acompanhar as vendas ao botao btnAcompanharVisualizarVendas
+      function acompanharVendas(){
+        limpaResposta();
+        resposta = "Para acompanhar suas vendas: "
+        + "Acesse o portal Tecpay (http://portal.tecpay.com.br), clicar em ‘Transações e Repasses’ -> ‘Detalhes’ -> Filtrar a data desejada. ";
+        typeWriter();
+      }
       btnAcompanharVisualizarVendas.onclick = acompanharVendas;
+
+      document.getElementById("demo").appendChild(espacoEntreOsBotoes);
+
+      document.getElementById("demo").appendChild(btnCancelarUmaVendaComAMaquinaTecpay);
+      function cancelarVenda(){
+             limpaResposta();
+             resposta = "Para cancelar uma venda: "
+             + "Clicar em Menu -> Cancelamento -> "
+             + "escolha a venda desejada -> insira o cartão "
+             + "-> digite o código “EC” que aparece no comprovante da venda "
+             + "-> repita o código “EC” para senha do operador -> aguarde a "
+             + "emissão do comprovante. Lembrando que o cancelamento deve ser feito no mesmo dia da venda.";
+             typeWriter();
+          }
+      btnCancelarUmaVendaComAMaquinaTecpay.onclick = cancelarVenda;
+
+      document.getElementById("demo").appendChild(btnAnteciparVendas);
+      function anteciparVendas(){
+        limpaResposta();
+        resposta = "Acessar o Portal Tecpay http://portal.tecpay.com.br, "
+        + "clicar na aba de ‘Antecipações’ -> ‘Solicitar’ -> selecionar as "
+        + "vendas desejadas -> clicar no botão ‘Solicitar’-> Pronto sua antecipação já foi enviada. "
+        +"Você também tem a opção de antecipar de forma automática, onde não será mais necessário "
+        +"acessar o portal para solicitar a antecipação e suas vendas serão antecipadas no dia "
+        +"seguinte à venda (exceto aos sábados, domingos e feriados). ";
+        typeWriter();
+      }
+      btnAnteciparVendas.onclick = anteciparVendas;
+
     }
+
+
 
     function criaBotoesTaxaAoPortador(){
       let btnComoFuncionamAsTaxasAoPortador = document.getElementById("demo");
@@ -294,12 +369,7 @@ function perguntaPraCris(){
       typeWriter();
     }
 
-    function  acompanharVendas(){
-      limpaResposta();
-      resposta = "Para acompanhar suas vendas: "
-      + "Acesse o portal Tecpay (http://portal.tecpay.com.br), clicar em ‘Transações e Repasses’ -> ‘Detalhes’ -> Filtrar a data desejada. ";
-      typeWriter();
-    }
+
 
     function adquirirMaquinaTecpay(){
       limpaResposta();
