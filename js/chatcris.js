@@ -17,6 +17,7 @@ function perguntaPraCris(){
     var speed = 15;
     var espacoEntreOsBotoes = document.createTextNode(" ");
 
+
 //maneiras de dizer oi
     switch (true) {
       case inputMinusculo.includes("oi"):
@@ -69,6 +70,10 @@ function perguntaPraCris(){
         abrirContaDigital();
         break;
 
+      case inputMinusculo.includes("conta"):
+        abrirContaDigital();
+        break;
+
       case inputMinusculo.includes("digo de cancelamento"):
         limpaResposta();
         codigoCancelamento();
@@ -87,6 +92,14 @@ function perguntaPraCris(){
           "Para falar com alguém da nossa equipe de suporte: " +
           "Ligue para (11) 3863-2332 ou pelo Whatsapp: +55 11 95305-3981";
         typeWriter();
+        break;
+
+      case inputMinusculo.includes("primeiro acess"):
+        primeiroAcessoPortal();
+        break;
+
+      case inputMinusculo.includes("primeira vez"):
+        primeiroAcessoPortal();
         break;
 
       case inputMinusculo.includes("horas"):
@@ -143,11 +156,53 @@ function perguntaPraCris(){
         mostraBotoesDasOpcoesParaVendas();
         break;
 
+      case inputMinusculo.includes("reimpr"):
+        imprimirSegundaVia();
+        break;
+
+      case inputMinusculo.includes("impr"):
+        imprimirSegundaVia();
+        break;
+
+     case inputMinusculo.includes("dados cadastrais"):
+        dadosCadastrais();
+        break;
+
+    case inputMinusculo.includes("dastro"):
+       dadosCadastrais();
+       break;
+
     default:
       respostaDefault();
   }
 
+   function primeiroAcessoPortal(){
+     limpaResposta();
+        resposta = "No seu primeiro acesso, você receberá um link "
+        + "diretamente em seu e-mail de cadastro. Após abrir o link, "
+        + "você vai inserir uma senha de sua preferência. Esta senha "
+        + "será utilizada juntamente com seu login que é seu e-mail "
+        + "informado na ficha de cadastro.";
+        typeWriter();
+   }
 
+   function dadosCadastrais(){
+     limpaResposta();
+     resposta = "Para alterar seus dados cadastrais: "
+     + "Envie um e-mail para contato@tecpay.com.br "
+     + "com os dados de sua empresa (Nome e CNPJ) e os dados que deseja alterar.";
+     typeWriter();
+   }
+
+
+    function imprimirSegundaVia(){
+      limpaResposta();
+      let textoInformativo = document.getElementById("demo2").innerHTML = "Para imprimir a 2a via:";
+      resposta = "Clicar em Menu -> Funções -> "
+      + "Reimpressão -> Selecionar a venda desejada "
+      + "-> Optar por via do cliente ou estabelecimento -> Aguardar a impressão.";
+      typeWriter();
+    }
 
     function mostraBotoesDasOpcoesParaVendas(){
       limpaResposta();
@@ -180,6 +235,16 @@ function perguntaPraCris(){
       btnAnteciparVendas.setAttribute("class", "botoes-antecipar-uma-venda btn btn-info");
       btnAnteciparVendas.innerHTML = "Antecipar Venda";
 
+      let btnImprimir2aViaComprovanteVendas = document.getElementById("demo");
+      btnImprimir2aViaComprovanteVendas = document.createElement("button");
+      btnImprimir2aViaComprovanteVendas.setAttribute("id","btnAnteciparVendas");
+      btnImprimir2aViaComprovanteVendas.setAttribute("class", "imprimir-2a-Via-Comprovante-Vendas btn btn-info");
+      btnImprimir2aViaComprovanteVendas.innerHTML = "Imprimir 2a Via do Comprovante";
+
+      document.getElementById("demo").appendChild(btnImprimir2aViaComprovanteVendas);
+
+      btnImprimir2aViaComprovanteVendas.onclick = imprimirSegundaVia;
+
       // adicionar o botao criado ao corpo do documento.
       document.getElementById("demo").appendChild(btnComoFacoUmaVendaComAMaquinaTecpay);
       function comoFacoUmaVendaComAMaquinaTecpay(){
@@ -207,9 +272,9 @@ function perguntaPraCris(){
             limpaResposta();
             let textoInformativoComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo2");
             textoInformativoComoFacoUmaVendaComAMaquinaTecpay.innerHTML = "Opção Débito:";
-            resposta = "Insira o cartão -> escolha a opção de débito "
-            + "-> coloque o valor desejado -> peça ao cliente que insira a senha "
-            + "-> aperte o verde -> aguarde a impressão do comprovante.";
+            resposta = "Insira o cartão -> Escolha a opção de débito "
+            + "-> Coloque o valor desejado -> Peça ao cliente que insira a senha "
+            + "-> Aperte o verde -> Aguarde a impressão do comprovante.";
             typeWriter();
           }
 
@@ -217,9 +282,9 @@ function perguntaPraCris(){
             limpaResposta();
             let textoInformativoComoFacoUmaVendaComAMaquinaTecpay = document.getElementById("demo2");
             textoInformativoComoFacoUmaVendaComAMaquinaTecpay.innerHTML = "Opção Crédito:";
-            resposta = "Insira o cartão -> escolha a opção de crédito "
-            + "-> optar por a vista ou parcelado -> digite o valor "
-            + "-> solicite a senha ao cliente -> aguarde a impressão do comprovante. ";
+            resposta = "Insira o cartão -> Escolha a opção de crédito "
+            + "-> Optar por a vista ou parcelado -> Digite o valor "
+            + "-> Solicite a senha ao cliente -> Aguarde a impressão do comprovante. ";
             typeWriter();
           }
 
@@ -261,7 +326,7 @@ function perguntaPraCris(){
         limpaResposta();
         resposta = "Acessar o Portal Tecpay http://portal.tecpay.com.br, "
         + "clicar na aba de ‘Antecipações’ -> ‘Solicitar’ -> selecionar as "
-        + "vendas desejadas -> clicar no botão ‘Solicitar’-> Pronto sua antecipação já foi enviada. "
+        + "vendas desejadas -> clicar no botão ‘Solicitar’-> Pronto, sua antecipação já foi enviada. "
         +"Você também tem a opção de antecipar de forma automática, onde não será mais necessário "
         +"acessar o portal para solicitar a antecipação e suas vendas serão antecipadas no dia "
         +"seguinte à venda (exceto aos sábados, domingos e feriados). ";
@@ -270,8 +335,6 @@ function perguntaPraCris(){
       btnAnteciparVendas.onclick = anteciparVendas;
 
     }
-
-
 
     function criaBotoesTaxaAoPortador(){
       limpaResposta();
@@ -323,8 +386,10 @@ function perguntaPraCris(){
 
     function listaComandos(){
       limpaResposta();
-      var lista = "Lista de comandos:";
-      resposta = lista;
+      let lista = document.getElementById("demo2").innerHTML = "Lista de Comandos:";
+      let listagem1 = "1. /kill - mata a aplicação";
+      let listagem2 = "2. /ajuda - um sumário com o que posso fazer";
+      resposta = listagem1 + " " + listagem2;
       typeWriter();
     }
 
