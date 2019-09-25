@@ -10,14 +10,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>teste bot.js</title>
+    <link rel="icon" href="../img/tecpay.ico" type="image/x-icon">    
+    <title>Cris</title>
   </head>
   <body>
-    <div class="container">
+    <div id="container" class="container">
       <a href="../index.html"><img src="..\img\tecpay.png" alt="logo_tecpay.png"></a>
       <main>
         <h1>Converse com a Cris</h1>
-        <h3>A Cris é a nossa assistente digital 24/7, equipada com tecnologia de ponta!</h3>
+        <h3>A Cris é a nossa assistente digital 24/7 e está pronta para o que você precisar!</h3>
       </main>
 
         <div class="iniciaChat">
@@ -30,10 +31,20 @@
             <h4>Olá! Como posso te ajudar?</h4>
 
             <section class="secao-chat">
-              <input id="input" type="text" name="input_usuario" placeholder="Digite sua resposta">
-              <button class="btn btn-info" type="button" name="button" onclick="perguntaPraCris()">Perguntar</button>
+              <form>
+                <div class="form-group">
+                  <label for="comment">Pergunte qualquer coisa</label>
+                  <textarea id="input" type="text" class="form-control"  placeholder="Digite sua resposta" value=""></textarea>
+                </div>
+              </form>
+              <button id="perguntaCris" class="btn btn-info" type="button" name="button" onclick="perguntaPraCris()">Perguntar</button>
+              <br>
+              <div class="respostas">
+                <p id="demo2"></p>
+                <p id="demo"></p>
+              </div>
 
-              <p id="demo"></p>
+
             </section>
 
           </div>
@@ -50,6 +61,6 @@
 
     </div>
 
-    <script type="text/javascript" src="..\js\chatcris.js"></script>
+    <script type="text/javascript" src="../js/chatcris.js"></script>
   </body>
 </html>
